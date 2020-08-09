@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const shortid = require('shortid')
 const bot = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] })
+require('dotenv').config()
 
 const game = require('./game')
 
@@ -91,4 +92,4 @@ bot.on('message', msg => {
   }).catch(console.error)
 })
 
-bot.login('Mzk5MTkxNzUwMjM5MDU5OTc5.WlDOSQ._Qr_n3G9pU-1i7id4llBSnrbTHc')
+bot.login(process.env.TOKEN)
