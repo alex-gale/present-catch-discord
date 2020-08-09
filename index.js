@@ -46,7 +46,7 @@ bot.on('messageReactionAdd', async (reaction, user) => {
 
 bot.on('message', msg => {
   if (msg.author.bot) return
-  if (msg.channel.name.startsWith('🎁') || msg.channel.name !== 'start-game') return msg.delete()
+  if (msg.channel.name.startsWith('🎁') || msg.channel.name !== 'present-catch') return msg.delete()
   if (msg.content !== '!present') return
 
   var guild = msg.guild
