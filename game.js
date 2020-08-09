@@ -152,11 +152,11 @@ const action = async (bot, reaction, user) => {
       })
     } else {
       gameMessage.delete()
-      gameChannel.send(`Game Over! You caught ${score} / 10 presents. Closing channel in 3 seconds...`)
+      gameChannel.send(`Game Over! You caught ${score} / 10 presents. Closing channel in 5 seconds...`)
 
       setTimeout(() => {
         gameChannel.delete()
-      }, 3000)
+      }, 5000)
     }
   }
 }
