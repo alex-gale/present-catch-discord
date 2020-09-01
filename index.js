@@ -36,10 +36,12 @@ bot.on('messageReactionAdd', async (reaction, user) => {
   }
 
   const VALID_REACTIONS = ['⬅️', '➡️', '⬇️', '❌']
+  // skip if not in right channel
+  if (!reaction.message.channel.name.startsWith('🎁')) return
   // delete if not valid reaction
   if (!VALID_REACTIONS.includes(reaction.emoji.name)) return reaction.remove()
   // check channel and reaction count
-  if (reaction.count < 2 || !reaction.message.channel.name.startsWith('🎁')) return
+  if (reaction.count < 2) return
 
   game.action(bot, reaction, user)
 })
